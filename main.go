@@ -37,7 +37,7 @@ func main() {
 		})
 	})
 
-	router.GET("/callback", func(ctx *gin.Context) {
+	router.POST("/webhok", func(ctx *gin.Context) {
 		bot, err := linebot.New("af42dc438bbcf308b5b0d274b4e1846e", "CX7kjGwq6ASjy3wd2SRihDD4XhlEzVKbTQ07JIUqGhNhXHuQwJ1L9NdP80uvSpqFz7qpmsdSQO0r9HmvEITCUGoy4j/zJWxwx09+5P8Mklzbo1H2FBnrrPXYx3iFhl+iZU74LMu0q8HEpQCj/vk1DgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 			log.Println(err)
