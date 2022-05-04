@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -54,8 +55,9 @@ func main() {
 				log.Println("ReplyToken: ", event.ReplyToken)
 				//lineMsg := event.Message
 				log.Println("line_message:", event.Message)
+				//msg := fmt.Sprintf("your line group id: %v", event.Source.GroupID)
 
-				msg := linebot.NewTextMessage("test_message: ")
+				msg := linebot.NewTextMessage(fmt.Sprintf("your line group id: %v", event.Source.GroupID))
 				_, err := bot.PushMessage(event.Source.GroupID, msg).Do()
 				if err != nil {
 					log.Println(err)
